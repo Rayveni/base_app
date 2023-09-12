@@ -1,7 +1,5 @@
 # pip-compile -q -o - | sed s:///::g > requirements.txt
-fastapi==0.101.0
-pydantic==2.1.1
-uvicorn==0.23.2
-asyncpg
-openpyxl
+fastapi
+uvicorn
 python-multipart
+openpyxl
