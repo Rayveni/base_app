@@ -45,8 +45,8 @@ app.middleware('http')(catch_exceptions_middleware)
 
 
 class ReportParams(BaseModel):
+    tentacles: str
     name: str
-    age: int
 
 
 @app.get("/url")

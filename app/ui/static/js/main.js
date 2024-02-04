@@ -2,13 +2,22 @@ function message_update(success, message) {
   document.querySelector('#message_id').textContent = message;
 }
 
+function get_input_values() {
+  let fields_id = ['tentacles', 'name'];
+  return Object.fromEntries(
+    fields_id.map((field_id) => [
+      field_id,
+      document.getElementById(field_id).value,
+    ])
+  );
+}
 async function FileUpload(inp) {
-  let user = { name: 'john', age: 34 };
+  let input_values =  get_input_values();
   let formData = new FormData();
   let photo = inp.files[0];
 
   formData.append('file', photo);
-  formData.append('report_params', JSON.stringify(user));
+  formData.append('report_params', JSON.stringify(input_values));
 
   //const ctrl = new AbortController()    // timeout setTimeout(() => ctrl.abort(), 5000);
 
